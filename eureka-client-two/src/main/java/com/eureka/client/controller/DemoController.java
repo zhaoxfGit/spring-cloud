@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eureka.client.templates.EurekaClients;
+import com.eureka.client.templates.eurekaone.FeignClients;
 
 /**
  * @Description: 
@@ -15,11 +15,12 @@ import com.eureka.client.templates.EurekaClients;
 @RestController
 @RequestMapping(value = "/client-two")
 public class DemoController {
+	
 	@Autowired
-	private EurekaClients eurekaClients;
+	private FeignClients feignEurekaOneClients;
 
 	@RequestMapping("/demo")
 	public String demo(@RequestParam String id) {
-		return eurekaClients.demo(id);
+		return feignEurekaOneClients.demo(id);
 	}
 }

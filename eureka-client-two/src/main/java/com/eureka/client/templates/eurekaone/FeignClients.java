@@ -1,4 +1,4 @@
-package com.eureka.client.templates;
+package com.eureka.client.templates.eurekaone;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Component;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date: 2018年7月22日 下午6:07:31
  */
 @Component
-@FeignClient(value = "eureka-client-one") // 这里的name对应调用服务的spring.applicatoin.name
-public interface EurekaClients {
+@FeignClient(value = "eureka-client-one", fallback = FeignClientsFallBack.class) // 这里的name对应调用服务的spring.applicatoin.name
+public interface FeignClients {
 	
 	@RequestMapping(value = "/client-one")
 	String demo(@RequestParam("id") String id);

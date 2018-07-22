@@ -10,6 +10,7 @@
 	<modules>
 		<module>eureka-server</module>
 		<module>eureka-client-one</module>
+		<module>eureka-client-two</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

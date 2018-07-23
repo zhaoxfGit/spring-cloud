@@ -23,11 +23,21 @@ public class DemoController {
 	public String demo() {
 		return "client-one被调用成功:" + name + "," + port;
 	}
-	
+
 	// 被通过zuul调用
 	@RequestMapping(value = "/zuul")
 	public String zuulTest() {
 		return "client-one zuul测试成功:" + name + "," + port;
+	}
+
+	@Value("${username}")
+	private String username;
+	@Value("${password}")
+	private String password;
+
+	@RequestMapping("/getProperties")
+	public String getProperties() {
+		return "服务模块获取配置中心参数" + username + " : " + password;
 	}
 
 }

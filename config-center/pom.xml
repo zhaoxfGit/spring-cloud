@@ -7,14 +7,12 @@
 		<artifactId>spring-cloud</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>eureka-client-one</artifactId>
+	<artifactId>config-center</artifactId>
 	<dependencies>
 		<!-- 配置中心 -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
-
 	</dependencies>
-
 </project>

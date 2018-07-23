@@ -1,0 +1,22 @@
+server:
+  port: 8759
+
+eureka:
+  client:
+    serviceUrl:
+      #注册中心的地址
+      defaultZone: http://localhost:8761/eureka/
+
+# git管理配置
+spring:
+  application:
+    name: config-center
+    
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ZhaoOrgan/spring-cloud/ #git仓库地址
+          searchPaths: config* #搜索路径         
+          username: zhaoxf-git
+          password: zxf13168093987

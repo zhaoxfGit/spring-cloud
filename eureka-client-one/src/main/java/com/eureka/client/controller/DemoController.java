@@ -18,9 +18,16 @@ public class DemoController {
 	@Value("${server.port}")
 	private String port;
 
+	// 被client-two 通过feign调用
 	@RequestMapping
 	public String demo() {
 		return "client-one被调用成功:" + name + "," + port;
+	}
+	
+	// 被通过zuul调用
+	@RequestMapping(value = "/zuul")
+	public String zuulTest() {
+		return "client-one zuul测试成功:" + name + "," + port;
 	}
 
 }

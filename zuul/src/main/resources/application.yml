@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: zuul
+
+server:
+  port: 8760
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  routes:
+    api-a:
+      path: /eureka-client-one/**
+      serviceId: eureka-client-one
+    api-b:
+      path: /eureka-client-two/**
+      serviceId: eureka-client-two
+  sensitive-headers:  #设置忽略的头信息，设置为空能解决会话保持问题
+  add-host-header: true #设为true才能保持Host头信息处理正确

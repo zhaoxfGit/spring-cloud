@@ -1,0 +1,27 @@
+server: 
+ port: 8758
+spring: 
+ application: 
+  name: zipkin
+ rabbitmq: #配置mq消息队列
+  host: localhost 
+  port: 5672 
+  username: springcloud 
+  password: springcloud
+ sleuth: 
+  sampler: 
+   percentage: 1
+eureka: 
+ client: 
+  serviceUrl: 
+   defaultZone: http://localhost:8761/eureka/ #注册服务器地址
+management: 
+ security: 
+  enabled: false #关闭验证
+info: #/info请求的显示信息
+ app: 
+  name: ${spring.application.name}
+  version: 1.0.0
+ build: 
+  artifactId: @project.artifactId@
+  version: @project.version@

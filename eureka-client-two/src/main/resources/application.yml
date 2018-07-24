@@ -3,10 +3,33 @@ eureka:
     serviceUrl:
       #注册中心的地址
       defaultZone: http://localhost:8761/eureka/
+
 server:
-  #当前服务端口号
+  # 当前服务端口号
   port: 8763
+
 spring:
+  # 当前名称
   application:
-    #当前应用名称
     name: eureka-client-two
+  # 注入配置中心
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-center
+      uri: http://localhost:8759/
+      profile: dev
+      label: master
+  # 注入zipkin服务追踪
+  zipkin:
+    base-url: http://localhost:8758
+  sleuth:
+    sampler:
+      percentage: 1.0
+  # 配置mq消息缓存
+  rabbitmq:
+    host: localhost 
+    port: 5672 
+    username: springcloud 
+    password: springcloud

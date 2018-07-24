@@ -1,6 +1,7 @@
 package com.eureka.client.controller;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 2018年7月22日 下午6:17:50
  */
 @RestController
+@RefreshScope
 @RequestMapping(value = "/client-one")
 public class DemoController {
 

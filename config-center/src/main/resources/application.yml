@@ -19,4 +19,4 @@ spring:
           uri: https://github.com/ZhaoOrgan/spring-cloud/ #git仓库地址
           searchPaths: config* #搜索路径         
           username: zhaoxf-git
-          password: zxf13168093987
+          password: ****
